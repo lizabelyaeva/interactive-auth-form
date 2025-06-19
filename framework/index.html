@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Форма авторизации</title>
+  <meta name="description" content="Доступная форма авторизации" />
+  <link rel="stylesheet" href="/src/styles/styles.css" />
+</head>
+<body>
+  <header class="header" role="banner" aria-label="Шапка сайта">
+    <h1>Вход в систему</h1>
+  </header>
+
+  <main class="main" role="main" aria-label="Основное содержимое">
+    <form id="loginForm" class="auth-form" aria-labelledby="formTitle" novalidate>
+      <h2 id="formTitle">Авторизация</h2>
+
+      <div class="social-buttons" role="group" aria-label="Социальные сети">
+        <button type="button" class="social-btn google" aria-label="Войти через Google">
+          <span class="icon"></span> Google
+        </button>
+        <button type="button" class="social-btn github" aria-label="Войти через GitHub">
+          <span class="icon"></span> GitHub
+        </button>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="required">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          aria-required="true"
+          aria-describedby="emailHelp emailError"
+          placeholder="user@example.com"
+          autocomplete="username"
+          aria-invalid="false"
+        />
+        <div id="emailHelp" class="help-text">Введите ваш email</div>
+        <div id="emailError" class="error-message" role="alert" aria-live="assertive"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="required">Пароль</label>
+        <div class="password-wrapper">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="6"
+            aria-required="true"
+            aria-describedby="passwordHelp passwordError"
+            placeholder="Не менее 6 символов"
+            autocomplete="current-password"
+            aria-invalid="false"
+          />
+          <button
+            type="button"
+            id="togglePassword"
+            aria-label="Показать пароль"
+            aria-controls="password"
+            aria-pressed="false"
+          >👁️</button>
+        </div>
+        <div id="passwordHelp" class="help-text">Минимум 6 символов</div>
+        <div id="passwordError" class="error-message" role="alert" aria-live="assertive"></div>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="remember" name="remember" aria-describedby="rememberHelp" />
+        <label for="remember">Запомнить меня</label>
+        <div id="rememberHelp" class="help-text">Не использовать на общественных компьютерах</div>
+      </div>
+
+      <button type="submit" class="submit-btn" aria-label="Войти в систему">Войти</button>
+    </form>
+  </main>
+
+  <footer class="footer" role="contentinfo" aria-label="Подвал сайта">
+    <p>&copy; 2025 Все права защищены</p>
+  </footer>
+
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
