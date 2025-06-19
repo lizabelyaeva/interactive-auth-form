@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "types": ["vite/client", "node", "vitest"],
+    "resolveJsonModule": true
+  },
+  "include": ["src", "vite.config.ts"]      
+}
